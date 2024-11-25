@@ -1,0 +1,24 @@
+/*nracine css rem */
+html{
+    font-size: 62.5%; /* base 10*/
+}
+
+body{
+    font: 1.6rem sans-serif; /* serif ou sans-serif*/
+    margin: 0;
+    letter-spacing: .1rem; /*1px*/
+    line-height: 1.6; /*Constante hauteur des lignes*/
+    
+    
+}
+h1,h2,h3,h4,h5,h6,
+p, figure, ul, ol{ 
+    /* plusieurs balises une seule proprieté*/
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+*{
+    box-sizing: border-box; /* 100px largeur ajouter 10px droite et gauche de l'élément: largeur totale = 120, 100-20 */
+}
