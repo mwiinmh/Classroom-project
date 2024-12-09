@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Language Switcher</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+
+        padding: 20px;
+      }
+      header * {
+        text-align: center;
+      }
+      header h1 {
+        align-content: center;
+
+        font-size: 2rem;
+      }
+      div.content {
+        max-width: 80rem;
+        margin: 0 auto;
+        background-color: #fafafafa;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center; /* Autres valeurs possibles : flex-start, flex-end, space-between, space-around, stretch */
+        height: 200px; /* Nécessaire pour observer l'alignement vertical */
+        border: 1px solid transparent;
+        padding-left: 1rem;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+
+      /* Styles spécifiques à chaque langue avec :lang() */
+      h1:lang(en) {
+        color: blue;
+      }
+      h1:lang(fr) {
+        color: red;
+      }
+      h1:lang(es) {
+        color: green;
+      }
+      .content button {
+        width: calc(100% / 3 - 1rem);
+        line-height: 3.5rem;
+        font-size: inherit;
+        background-color: #222;
+        border: 0;
+        border-radius: 0.4rem;
+        color: #fafafa;
+        cursor: pointer;
+        text-transform: uppercase;
+      }
+      .content button:nth-child(3) {
+        margin: 0 1rem;
+      }
+      .content p {
+        text-align: center;
+        display: block;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 id="title">Welcome</h1>
+    </header>
+    <div class="content">
+      <p id="description">This is an example of a multilingual page.</p>
+      <button class="lang-btn" type="button" data-lang="en">English</button>
+      <button class="lang-btn" type="button" data-lang="fr">Français</button>
+      <button class="lang-btn" type="button" data-lang="es">Español</button>
+    </div>
+
+    <script>
+      // Écouteur d'événements sur les boutons
+      document.querySelectorAll(".lang-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+          // Récupère la langue choisie
+          const selectedLang = button.getAttribute("data-lang");
+
+          // Modifie l'attribut `lang` de la balise HTML principale
+          document.documentElement.lang = selectedLang;
+
+          // Si le navigateur et vos éléments HTML utilisent `lang`, le contenu peut
+          // aussi être mis à jour dynamiquement via l'attribut
+          const title = document.getElementById("title");
+          const description = document.getElementById("description");
+        });
+      });
+    </script>
+  </body>
+</html>
