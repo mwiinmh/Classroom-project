@@ -1,0 +1,60 @@
+@import url(./reset.css);
+
+:root{
+    --bgcolor-header: #222;
+    --bgcolor-header: 
+}
+header{
+    background-color: var(--bgcolor-header); /* variable css */
+}
+header h1{
+    line-height: 7.5rem;
+    text-align: center;
+    color: #fff;
+    background-color: black;
+}
+
+figure{
+    max-width:120rem;
+    margin: 0 auto;
+    border: solid .1rem transparent;
+    background-color: rgb(250, 250, 250);
+    box-shadow: 0 0 3rem #282727;
+}
+
+figure img{
+    width: 100%;
+}
+
+figure h2{
+    background-color: black;
+    color: #fff;
+    padding: 1rem;
+}
+footer *{
+    text-align: center;
+}
+
+figcaption{
+    background-color: #00BFFF;
+    padding: 1rem;
+}
+
+figure em{
+   color: #00BFFF;
+}
+/*media queries*/
+@media screen and (max-width:70rem) {
+    header h1{
+        color: red;
+        font-size: 2rem;
+    }
+}
+@media screen and (orientation: landscape) {
+    header h1{
+        color: #fff;
+    }
+    figure img{
+        width: inherit;
+    } 
+} 
